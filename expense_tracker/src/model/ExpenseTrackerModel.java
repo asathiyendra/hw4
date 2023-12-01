@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
+/** 
+ * 	ExpenseTrackerModel represents the model of the application
+ * 	and is the model component of the Model View Controller
+ *  (MVC) architecture being used for this application.
+ */ 
 public class ExpenseTrackerModel {
 
   //encapsulation - data integrity
@@ -80,7 +86,13 @@ public class ExpenseTrackerModel {
 	  
       return false;
   }
-
+  
+  /** 
+   * Returns the number of listeners that are registered 
+   * @param none 
+   * @return If the listener is non-null, returns length of
+   * listeners list. If not, returns 0. 
+   */
   public int numberOfListeners() {
       // For testing, this is one of the methods.
       if (this.listeners != null) {
@@ -90,11 +102,23 @@ public class ExpenseTrackerModel {
       return 0;
   }
 
+  /** 
+   * Determines whether or not the listener is in list registered
+   * @param listener The ExpenseTrackerModelListener
+   * @return If the listener is in the list of registered listeners,
+   * 	     returns true. If not, returns false. 
+   */
   public boolean containsListener(ExpenseTrackerModelListener listener) {
       // For testing, this is one of the methods.  
       return this.listeners.contains(listener);
   }
 
+  /** 
+   * updates the view
+   * @param none
+   * @return Goes through each listener and updates
+   * 		 using model.
+   */  
   // Note: May need to change back to protected
   public void stateChanged() {
       // For the Observable class, this is one of the methods.
